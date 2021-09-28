@@ -53,7 +53,7 @@ namespace AADB2C.MagicLink.WebApi.Models
             string thumbprint = WebEncoders.Base64UrlEncode(certificate.GetCertHash());
 
             // JWK must have the modulus and exponent explicitly defined
-            RSACng rsa = certificate.PublicKey.Key as RSACng; ;
+            RSA rsa = certificate.GetRSAPublicKey();
 
             if (rsa == null)
             {

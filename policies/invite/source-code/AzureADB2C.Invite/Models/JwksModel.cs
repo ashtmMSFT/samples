@@ -52,7 +52,7 @@ namespace AzureADB2C.Invite.Models
             string thumbprint = Base64UrlEncoder.Encode(certificate.GetCertHash());
 
             // JWK must have the modulus and exponent explicitly defined
-            RSACng rsa = certificate.GetRSAPublicKey() as RSACng;
+            RSA rsa = certificate.GetRSAPublicKey();
 
             if (rsa == null)
             {
